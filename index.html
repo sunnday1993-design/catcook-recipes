@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CatCook 猫饭配方查询</title>
+    <link rel="stylesheet" href="style.css?v=0.2.2" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <p class="eyebrow">CatCook</p>
+        <h1>猫饭配方查询</h1>
+        <p class="intro">搜索配方、了解食材、查看适合猫咪的自制猫饭方案。</p>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <section class="toolbar" aria-label="配方查询工具">
+        <label class="search-box" for="searchInput">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="输入鸡胸肉、幼猫、美毛、低脂..." autocomplete="off" />
+        </label>
+        <div class="filter-group" aria-label="分类筛选">
+          <button class="filter-button active" type="button" data-category="全部">全部</button>
+          <button class="filter-button" type="button" data-category="基础">基础</button>
+          <button class="filter-button" type="button" data-category="幼猫">幼猫</button>
+          <button class="filter-button" type="button" data-category="美毛">美毛</button>
+          <button class="filter-button" type="button" data-category="减脂">减脂</button>
+          <button class="filter-button" type="button" data-category="增肥">增肥</button>
+          <button class="filter-button" type="button" data-category="肠胃">肠胃</button>
+          <button class="filter-button" type="button" data-category="低敏">低敏</button>
+          <button id="favoriteFilter" class="filter-button favorite-filter" type="button" aria-pressed="false">只看收藏</button>
+        </div>
+      </section>
+
+      <section id="dailyRecommendation" class="daily-recommendation" aria-label="今日推荐"></section>
+      <section class="summary-row" aria-live="polite">
+        <p id="resultCount">共 0 个配方</p>
+        <p>配方仅作入门参考，长期主食请先咨询宠物医生或宠物营养师。</p>
+      </section>
+      <section id="recipeGrid" class="recipe-grid" aria-label="猫饭配方列表"></section>
+      <section id="emptyState" class="empty-state" hidden>
+        <h2>没有找到匹配配方</h2>
+        <p>换个关键词，或切回“全部”分类再试试。</p>
+      </section>
+    </main>
+
+    <footer class="disclaimer">
+      <button id="disclaimerToggle" class="disclaimer-toggle" type="button" aria-expanded="false">自制猫饭仅供参考</button>
+      <p id="disclaimerFullText" class="disclaimer-full" hidden>自制猫饭仅供参考，长期作为主食请咨询宠物医生或宠物营养师。猫咪有疾病、过敏、肠胃问题时，不建议自行长期调整饮食。</p>
+    </footer>
+
+    <div id="recipeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-panel">
+        <button class="icon-close" type="button" data-close-modal aria-label="关闭详情">×</button>
+        <div id="modalContent"></div>
+      </article>
+    </div>
+
+    <script src="script.js?v=0.2.5"></script>
+  </body>
+</html>

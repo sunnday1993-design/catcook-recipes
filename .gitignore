@@ -1,0 +1,13 @@
+﻿.DS_Store
+Thumbs.db
+*.bad
+.deploy-src*/
+.openai/
+.agents/
+.codex/
+PRD.md
+IMAGE_PROMPTS.md
+original-contact-sheet.png
+cat-food-small-granules.png
+assets/
+recipes.json
